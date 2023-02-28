@@ -1,0 +1,37 @@
+﻿@model Application.Common.DTOs.AccountDetailsDTO
+
+<form method="post" asp-controller="Account" asp-action="Profile">
+    <div>
+        <div asp-validation-summary="@ValidationSummary.ModelOnly" class="hotel-val-summary hotel-validation"></div>
+        <div class="mb-2">
+            <input id="firstname" type="text" class="form-control rounded-end" asp-for="@Model.FirstName" placeholder="Imię">
+            <span id="firstnamespan" class="hotel-validation" asp-validation-for="@Model.FirstName"></span>
+        </div>
+        <div class="mb-2">
+            <input id="lastname" type="text" class="form-control rounded-end" asp-for="@Model.LastName" placeholder="Nazwisko">
+            <span id="lastnamespan" class="hotel-validation" asp-validation-for="@Model.LastName"></span>
+        </div>
+        <div class="mb-2">
+            <span id="usernamewarning" class="hotel-warning" style="display: none">Uwaga! Przy zmianie loginu system automatycznie cię wyloguje</span>
+            <input id="username" type="text" class="form-control rounded-end" asp-for="@Model.UserName" placeholder="Login">
+            <span id="usernamespan" class="hotel-validation" asp-validation-for="@Model.UserName"></span>
+        </div>
+        <div class="mb-2">
+            <input id="newemail" type="text" class="form-control rounded-end" asp-for="@Model.Email" placeholder="Email">
+            <span id="emailspan" class="hotel-validation" asp-validation-for="@Model.Email"></span>
+        </div>
+        <div class="mb-2">
+            <input id="phone" type="text" class="form-control rounded-end" asp-for="@Model.PhoneNumber" placeholder="Nr telefonu">
+            <span id="phonespan" class="hotel-validation" asp-validation-for="@Model.PhoneNumber"></span>
+        </div>
+        <div class="mb-2">
+            <label asp-for="@Model.TwoFactorEnabled" class="checkbox-inline">
+                <input type="checkbox" asp-for="@Model.TwoFactorEnabled" />
+                Weryfikacja dwuetapowa
+            </label>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn text-white hotel-bg-color">Zapisz</button>
+        </div>
+    </div>
+</form>

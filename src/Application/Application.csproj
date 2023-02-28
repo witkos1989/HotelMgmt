@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="FluentValidation.DependencyInjectionExtensions" />
+    <None Remove="MailKit" />
+    <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Microsoft.AspNetCore.Http" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Common\" />
+    <None Remove="Common\Behaviours\" />
+    <None Remove="Common\Exceptions\" />
+    <None Remove="Common\Interfaces\" />
+    <None Remove="Common\Models\" />
+    <None Remove="Common\Security\" />
+    <None Remove="Accounts\" />
+    <None Remove="Accounts\Commands\" />
+    <None Remove="Accounts\Commands\Login\" />
+    <None Remove="Accounts\Commands\Register\" />
+    <None Remove="Common\DTOs\" />
+    <None Remove="Accounts\Commands\ConfirmMail\" />
+    <None Remove="Accounts\Commands\Logout\" />
+    <None Remove="Accounts\Commands\ForgotPassword\" />
+    <None Remove="Accounts\Commands\ResetPassword\" />
+    <None Remove="Accounts\Commands\GetDetails\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.0" />
+    <PackageReference Include="MailKit" Version="3.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.3" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Common\Behaviours\" />
+    <Folder Include="Common\Exceptions\" />
+    <Folder Include="Common\Interfaces\" />
+    <Folder Include="Common\Models\" />
+    <Folder Include="Common\Security\" />
+    <Folder Include="Accounts\" />
+    <Folder Include="Accounts\Commands\" />
+    <Folder Include="Accounts\Commands\Login\" />
+    <Folder Include="Accounts\Commands\Register\" />
+    <Folder Include="Common\DTOs\" />
+    <Folder Include="Accounts\Commands\ConfirmMail\" />
+    <Folder Include="Accounts\Commands\Logout\" />
+    <Folder Include="Accounts\Commands\ForgotPassword\" />
+    <Folder Include="Accounts\Commands\ResetPassword\" />
+    <Folder Include="Accounts\Commands\GetDetails\" />
+  </ItemGroup>
+</Project>

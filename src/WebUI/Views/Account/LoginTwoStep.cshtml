@@ -1,0 +1,23 @@
+﻿@model Application.Accounts.Commands.TwoStepLoginCommand
+
+@{
+    ViewData["Title"] = "HotelMgmt - Weryfikacja dwuetapowa";
+}
+
+<div class="h-100 d-flex justify-content-center mt-3">
+    <form id="twoStepLoginForm" class="hotel-width" method="post" asp-controller="Account" asp-action="LoginTwoStep" asp-route-returnurl="@ViewData["ReturnUrl"]">
+        <div class="p-2 text-white rounded-top hotel-bg-color shadow">
+            <h4 class="text-center mb-sm-0">Kod weryfikacyjny:</h4>
+        </div>
+        <div class="mb-2 rounded-bottom p-sm-2 shadow" style="background-color: lightgray">
+            <div class="mb-2">
+                <input class="form-control rounded-end" asp-for="TwoFactorCode" placeholder="Kod">
+                <span class="hotel-validation" asp-validation-for="TwoFactorCode"></span>
+                <div asp-validation-summary="@ValidationSummary.ModelOnly" class="hotel-val-summary hotel-validation"></div>
+            </div>
+            <div class="text-center">
+                <button id="twoStepLoginBtn" type="submit" class="btn text-white hotel-bg-color">Zweryfikuj</button>
+            </div>
+        </div>
+    </form>
+</div>

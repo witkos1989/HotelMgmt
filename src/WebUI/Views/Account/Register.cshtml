@@ -1,0 +1,49 @@
+﻿@model Application.Accounts.Commands.RegisterCommand
+
+@{
+    ViewData["Title"] = "Rejestracja";
+}
+
+<div class="h-100 d-flex justify-content-center mt-3">
+    <form id="registerForm" class="hotel-width" method="post" asp-controller="Account" asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">
+        <div class="p-2 text-white rounded-top hotel-bg-color">
+            <h4 class="text-center mb-sm-0">Rejestracja</h4>
+        </div>
+        <div class="mb-2 rounded-bottom p-sm-2 shadow" style="background-color: lightgray">
+            <div class="mb-2">
+                <div asp-validation-summary="ModelOnly" class="hotel-val-summary hotel-validation"></div>
+                <input id="firstname" type="text" class="form-control rounded-end" name="firstname" asp-for="FirstName" placeholder="Imię">
+                <span id="firstnamespan" class="hotel-validation" asp-validation-for="FirstName"></span>
+            </div>
+            <div class="mb-2">
+                <input id="lastname" type="text" class="form-control rounded-end" name="lastname" asp-for="LastName" placeholder="Nazwisko">
+                <span id="lastnamespan" class="hotel-validation" asp-validation-for="LastName"></span>
+            </div>
+            <div class="mb-2">
+                <input id="username" type="text" class="form-control rounded-end" name="username" asp-for="UserName" placeholder="Login">
+                <span id="usernamespan" class="hotel-validation" asp-validation-for="UserName"></span>
+            </div>
+            <div class="mb-2">
+                <input id="email" type="text" class="form-control rounded-end" name="email" asp-for="Email" placeholder="Email">
+                <span id="emailspan" class="hotel-validation" asp-validation-for="Email"></span>
+            </div>
+            <div class="mb-2">
+                <input id="phonenumber" type="text" class="form-control rounded-end" name="phonenumber" asp-for="PhoneNumber" placeholder="Nr telefonu">
+                <span id="phonenumberspan" class="hotel-validation" asp-validation-for="PhoneNumber"></span>
+            </div>
+            <div class="mb-2">
+                <input id="password" type="password" class="form-control rounded-end" name="password" asp-for="Password" placeholder="Hasło">
+                <span id="passwordspan" class="hotel-validation" asp-validation-for="Password"></span>
+            </div>
+            <div class="mb-2">
+                <input id="confirmpassword" type="password" class="form-control rounded-end" name="confirmpassword" asp-for="ConfirmPassword" placeholder="Powtórz hasło">
+                <span id="confirmpasswordspan" class="hotel-validation" asp-validation-for="ConfirmPassword"></span>
+            </div>
+            <div class="text-center">
+                <button id="registerBtn" type="submit" class="btn text-white hotel-bg-color">Zarejestruj</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="~/js/account/register.js"></script>

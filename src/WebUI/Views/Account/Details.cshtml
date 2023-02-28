@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Szczegóły konta";
+}
+
+<div class="align-items-center">
+    @if (!String.IsNullOrEmpty(TempData["Success"]?.ToString()))
+    {
+        <p class="alert alert-success" style="display: block; text-align: center;" id="messageS">@TempData["Success"]</p>
+    }
+    <div class="p-2 text-white rounded-top hotel-bg-color shadow">
+        <h4 class="text-center mb-sm-0">Szczegóły konta</h4>
+    </div>
+    <div class="p-2 rounded-bottom shadow row" style="background-color: lightgray; margin: 0px !important;">
+        <div class="col-md-3">
+            <ul class="nav nav-pills flex-column">
+                @if (!String.IsNullOrEmpty(TempData["SecondView"]?.ToString()))
+                    if (TempData["SecondView"]!.ToString() == "true")
+                    {
+                        <li id="profile" onclick="showProfile()" class="nav-link hotel-hover">Profil</li>
+                        <li id="password" onclick="showPassword()" class="nav-link hotel-hover hotel-active">Hasło</li>
+                    }
+                    else { }
+                else
+                {
+                    <li id="profile" onclick="showProfile()" class="nav-link hotel-hover hotel-active">Profil</li>
+                    <li id="password" onclick="showPassword()" class="nav-link hotel-hover">Hasło</li>
+                }
+            </ul>
+        </div>
+        @if (!String.IsNullOrEmpty(TempData["SecondView"]?.ToString()))
+            if (TempData["SecondView"]!.ToString() == "true")
+            {
+                <div id="profileview" style="display: none;" class="col-md-9">
+                    <partial name="Profile" />
+                </div>
+                <div id="passwordview" style="display: block;" class="col-md-9">
+                    <partial name="Password" />
+                </div>
+            }
+            else { }
+        else
+        {
+            <div id="profileview" style="display: block;" class="col-md-9">
+                <partial name="Profile" />
+            </div>
+            <div id="passwordview" style="display: none;" class="col-md-9">
+                <partial name="Password" />
+            </div>
+        }
+    </div>
+</div>
+
+<script src="~/js/account/accountdetails.js"></script>
